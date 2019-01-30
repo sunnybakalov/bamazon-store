@@ -13,7 +13,7 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("yeezys", "shoes", $850, 5);
+VALUES ("nike air yeezy 2 solar", "shoes", $850, 5);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("lebron 8 south beach", "shoes", $725, 10);
