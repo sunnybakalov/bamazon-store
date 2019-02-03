@@ -47,7 +47,7 @@ connection.connect(function(err) {
     inquirer
       .prompt([
       {
-        name: "product",
+        name: "productId",
         type: "input",
         message: "What product id would you like to buy?",
       },
@@ -59,8 +59,28 @@ connection.connect(function(err) {
     ])
       .then(function(answer) {
         console.log(answer);
-        // var query = "SELECT * FROM bamazon";
+        // var query = "SELECT * FROM products";
 
+        var chosenItem;
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].item_id === answer.productId) {
+            chosenItem = results[i];
+          }
+        }
+
+        if (chosenItem.stock_quantity < parseInt(answer.quantity)) {
+          //there were enough items to accomodate for the quantity that the buyer requests.
+          connection.query("UPDATE products SET ? WHERE ?",
+          [
+            {
+              stock_quantity : stock_quantity - quantity
+            },
+            {
+              
+            }
+          ]
+          )
+        }
 
       });
 
