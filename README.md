@@ -8,7 +8,7 @@
 Want some Yeezys?
 How about a Donovan Mitchell jersey?
 
-####Look no further!
+#### Look no further!
 Welcome to Bamazon.
 This command line app uses mySQL to keep track of the hottest new items for sale.
 
