@@ -1,5 +1,6 @@
-var mysql = require("mysql");
-var inquirer = require("inquirer");
+const mysql = require("mysql");
+const inquirer = require("inquirer");
+const CFonts = require('cfonts');
 require("dotenv").config();
 
 //connection to the bamazon database
@@ -13,6 +14,18 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) throw err;
+});
+
+
+CFonts.say('BAMAZON!', {
+  font: 'block',             
+  align: 'left',              
+  colors: ['cyanBright'],        
+  background: 'transparent',  
+  letterSpacing: 1,           
+  lineHeight: 1,              
+  space: true,                
+  maxLength: '0',             
 });
 
 //function that displays the stock and prompts the user to choose an item to buy
